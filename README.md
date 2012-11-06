@@ -15,19 +15,19 @@ This magento module (General) is going to have general helpers etc required when
 				<urlParams/>
 				<position>10</position>
 				<li/>
-				<a>class="free-shipping"</a>
+				<a>class="top-free-shipping"</a>
 				<before_text/>
 				<after_text/>
 			</action>
 			<action method="addLink" translate="label title" module="tgeneral">
 				<label helper="tgeneral/getStorePhoneNumber"/>
-				<url helper="tgeneral/getFreeShippingUrl" />
+				<url helper="tgeneral/getContactUsUrl"/>
 				<title helper="tgeneral/getStorePhoneNumber"/>
 				<prepare/>
 				<urlParams/>
 				<position>20</position>
 				<li/>
-				<a>class="contact-number"</a>
+				<a>class="top-contact-number"</a>
 				<before_text/>
 				<after_text/>
 			</action>
@@ -39,7 +39,7 @@ This magento module (General) is going to have general helpers etc required when
 				<urlParams/>
 				<position>30</position>
 				<li/>
-				<a>class="free-returns"</a>
+				<a>class="top-free-returns"</a>
 				<before_text/>
 				<after_text/>
 			</action>

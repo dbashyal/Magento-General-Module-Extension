@@ -22,25 +22,6 @@
  * @module   Tgeneral
  * @author   Damodar Bashyal (enjoygame @ hotmail.com)
  */
-class Technooze_Tgeneral_Helper_Data extends Mage_Core_Helper_Abstract
+class Technooze_Tgeneral_Block_General extends Mage_Core_Block_Text
 {
-    public function getContactUsUrl()
-   	{
-   		return $this->_getUrl('contacts');
-   	}
-
-    public function getFreeReturnsUrl()
-   	{
-   		return $this->_getUrl('free-returns');
-   	}
-
-    public function getFreeShippingUrl()
-   	{
-   		return $this->_getUrl('free-shipping');
-   	}
-
-    public function getStorePhoneNumber()
-   	{
-   		return Mage::getStoreConfig('general/store_information/phone');
-   	}
 }
