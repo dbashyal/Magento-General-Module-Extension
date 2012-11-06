@@ -32,14 +32,14 @@ This magento module (General) is going to have general helpers etc required when
 				<after_text/>
 			</action>
 			<action method="addLink" translate="label title" module="tgeneral">
-				<label>Free shipping</label>
+				<label>Free Returns</label>
 				<url helper="tgeneral/getFreeReturnsUrl" />
-				<title>Free shipping</title>
+				<title>Free Returns</title>
 				<prepare/>
 				<urlParams/>
-				<position>10</position>
+				<position>30</position>
 				<li/>
-				<a>class="free-shipping"</a>
+				<a>class="free-returns"</a>
 				<before_text/>
 				<after_text/>
 			</action>
