@@ -43,4 +43,9 @@ class Technooze_Tgeneral_Helper_Data extends Mage_Core_Helper_Abstract
    	{
    		return Mage::getStoreConfig('general/store_information/phone');
    	}
+
+    public function getStoreAddress()
+   	{
+   		return Mage::getStoreConfig('general/store_information/address');
+   	}
 }
