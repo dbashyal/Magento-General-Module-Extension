@@ -45,3 +45,10 @@ This magento module (General) is going to have general helpers etc required when
 			</action>
 		</block>
 	</reference>
+
+## Magento add multiple css and js at one go
+**instead of action "addItem", use "addMultipleItems" action and separate names with comma(,).
+	<reference name="head">
+		<action method="addMultipleItems"><type>skin_js</type><name>js/banner-1.js,js/banner-2.js</name><params/><if/></action>
+		<action method="addMultipleItems"><type>skin_css</type><name>css/banner-1.css,css/banner-2.css</name><params/><if/></action>
+	</reference>
