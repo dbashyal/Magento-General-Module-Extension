@@ -14,6 +14,17 @@
         </Technooze_Tgeneral>
     </modules>
     <global>
+        <blocks>
+            <tgeneral>
+                <class>Technooze_Tgeneral_Blocks</class>
+            </tgeneral>
+            <page>
+                <rewrite>
+                    <!-- rewrite Page\Block\Html\Head.php -->
+                    <html_head>Technooze_Tgeneral_Block_Html_Head</html_head>
+                </rewrite>
+            </page>
+        </blocks>
         <helpers>
             <tgeneral>
                 <class>Technooze_Tgeneral_Helper</class>
