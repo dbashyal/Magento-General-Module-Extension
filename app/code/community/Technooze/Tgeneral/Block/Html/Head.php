@@ -55,6 +55,10 @@ class Technooze_Tgeneral_Block_Html_Head extends Mage_Page_Block_Html_Head
         $files = explode(',', $name);
 
         foreach($files as $name){
+            $name = trim($name);
+
+            if(empty($name)) continue;
+
             $this->_data['items'][$type.'/'.$name] = array(
                 'type'   => $type,
                 'name'   => $name,
