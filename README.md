@@ -59,9 +59,9 @@ This magento module (General) is going to have general helpers etc required when
 ##Magento get current category
 using below command you can get current category from category or product mage
 ```php
-$currentCat = Mage::helper('tgeneral')->getCurrentCategory();
+$currentCat = Mage::helper(\'tgeneral\')->getCurrentCategory();
 ``
-Then you can get current category's info like category url, category name, category id etc. from the category object returned.
+Then you can get current category\'s info like category url, category name, category id etc. from the category object returned.
 ```php
 $currentCat->getUrl();
 $currentCat->getName();
