@@ -68,5 +68,13 @@ $currentCat->getName();
 $currentCat->getId();
 ```
 
+##media cdn
+on my etc/hosts i have media.example.com, media0.example.com-media10.example.com so i can use different media urls to load faster
+this is a quick dirty hack that works for me. this is how i convert urls.
+```php
+Mage::helper('tgeneral')->mediaCdnUrl($this->helper('catalog/image')->init($_product, 'small_image')->setQuality(100)->resize(300));
+```
+on system config in media url i have set (http://media.example.com/) then media is replaced with media0-media10)
+
 
 ###visit: http://learntipsandtricks.com/ for more magento tips, tricks and codes.
