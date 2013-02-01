@@ -24,9 +24,29 @@
  */
 class Technooze_Tgeneral_Helper_Data extends Mage_Core_Helper_Abstract
 {
+    protected $_mediaCount = 0;
+    private $_tcdn = 0;
+
+    public function __construct(){
+        $this->_tcdn = Mage::getStoreConfig('general/tgeneral/tcdn');
+    }
+
+    public function mediaCdnUrl($src = false)
+    {
+        if(!$src || !$this->_tcdn) return $src;
+
+        $src = preg_replace('/:\/\/media/', '://media' . $this->_mediaCount++, $src);
+
+        if($this->_mediaCount > 10) {
+            $this->_mediaCount = 0;
+        }
+
+        return $src;
+   	}
+
     public function getContactUsUrl()
    	{
-   		return $this->_getUrl('contacts');
+   	    return $this->_getUrl('contacts');
    	}
 
     public function getFreeReturnsUrl()
