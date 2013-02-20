@@ -30,5 +30,10 @@
                 <class>Technooze_Tgeneral_Helper</class>
             </tgeneral>
         </helpers>
+        <models>
+            <tgeneral>
+                <class>Technooze_Tgeneral_Model</class>
+            </tgeneral>
+        </models>
     </global>
 </config>
