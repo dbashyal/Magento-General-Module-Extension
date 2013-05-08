@@ -87,6 +87,49 @@ class Technooze_Tgeneral_Helper_Data extends Mage_Core_Helper_Abstract
         return $current_category;
    	}
 
+    /**
+     *
+     */
+    public function removeImagesFromProduct($_productId = 0)
+    {
+        if(!$_productId) return $this;
+        $product = Mage::getModel('catalog/product')->load($_productId);
+
+        //check if gallery attribute exists then remove all images if it exists
+        //Get products gallery attribute
+        $attributes = $product->getTypeInstance()->getSetAttributes();
+        if (isset($attributes['media_gallery'])) {
+            $gallery = $attributes['media_gallery'];
+            //Get the images
+            $galleryData = $product->getMediaGallery();
+            if(isset($galleryData['images'])) {
+                foreach ($galleryData['images'] as $image) {
+                    //If image exists
+                    if ($gallery->getBackend()->getImage($product, $image['file'])) {
+                        $gallery->getBackend()->removeImage($product, $image['file']);
+
+                        $oldImage = str_replace(array('/', '\\'), DS, (Mage::getBaseDir('media') . DS . 'catalog' . DS . 'product' . $image['file']));
+
+                        if(file_exists($oldImage))
+                        {
+                            unlink($oldImage);
+                        }
+                    }
+                }
+                //$gallery->getBackend()->clearMediaAttribute($product, array_keys($product->getMediaAttributes()));
+            }
+        }
+
+        try {
+            $product->save();
+        } catch (Exception $e){
+            Mage::logException($e);
+        }
+
+        //end
+        return $product;
+    }
+
     public static function log($message, $file = '', $mode='a')
     {
         if (empty($file)) {
