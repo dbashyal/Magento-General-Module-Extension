@@ -87,6 +87,14 @@ class Technooze_Tgeneral_Helper_Data extends Mage_Core_Helper_Abstract
         return $current_category;
    	}
 
+    public function getPriceLabel(){
+        $label = Mage::getStoreConfig('tgeneral/general/price_label');
+        if(empty($label)){
+            return $this->_priceLabel;
+        }
+        return $label;
+    }
+
     /**
      *
      */
