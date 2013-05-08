@@ -56,6 +56,11 @@ This magento module (General) is going to have general helpers etc required when
 </reference>
 ```
 
+##Magento product url  - get full category path
+```php
+Mage::helper('tgeneral')->getProductUrl($_product);
+```
+
 ##Magento get current category
 using below command you can get current category from category or product mage
 ```php
