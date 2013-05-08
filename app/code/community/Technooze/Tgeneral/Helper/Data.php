@@ -86,4 +86,37 @@ class Technooze_Tgeneral_Helper_Data extends Mage_Core_Helper_Abstract
         }
         return $current_category;
    	}
+
+    public static function log($message, $file = '', $mode='a')
+    {
+        if (empty($file)) {
+            $file = 'updatedProducts-'.date('Ymd', time()).'.log';
+        }
+        $logDir  = Mage::getBaseDir('var') . DS . 'log';
+        $logFile = $logDir . DS . $file;
+
+        try {
+            if (!is_dir($logDir)) {
+                mkdir($logDir);
+                chmod($logDir, 0777);
+            }
+
+            if (!file_exists($logFile)) {
+                file_put_contents($logFile, '');
+                chmod($logFile, 0777);
+            }
+
+            if (is_array($message) || is_object($message)) {
+                $message = print_r($message, true);
+            }
+
+            $fp = fopen($logFile, $mode);
+            if (false === @fwrite($fp, $message . PHP_EOL)){
+                throw new Zend_Log_Exception("Unable to write to stream");
+            }
+            fclose($fp);
+        }
+        catch (Exception $e) {
+        }
+    }
 }
