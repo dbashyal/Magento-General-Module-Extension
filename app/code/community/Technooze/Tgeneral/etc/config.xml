@@ -24,6 +24,13 @@
                     <html_head>Technooze_Tgeneral_Block_Html_Head</html_head>
                 </rewrite>
             </page>
+            <reports>
+                <rewrite>
+                    <!-- rewrite Reports\Block\Product\Viewed.php -->
+					<!-- Shows current product as recently viewed if it's first viewed item, so recently viewed block is always on in the product detail page -->
+                    <product_viewed>Technooze_Tgeneral_Block_Reports_Product_Viewed</product_viewed>
+                </rewrite>
+            </reports>
         </blocks>
         <helpers>
             <tgeneral>
