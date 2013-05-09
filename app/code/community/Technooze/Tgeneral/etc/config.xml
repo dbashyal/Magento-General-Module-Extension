@@ -43,4 +43,13 @@
             </tgeneral>
         </models>
     </global>
+    <frontend>
+		<layout>
+			<updates>
+				<tgeneral module="Technooze_Tgeneral">
+					<file>tgeneral.xml</file>
+				</tgeneral>
+			</updates>
+		</layout>
+    </frontend>
 </config>

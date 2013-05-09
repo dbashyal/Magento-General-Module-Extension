@@ -89,52 +89,11 @@ class Technooze_Tgeneral_Helper_Data extends Mage_Core_Helper_Abstract
         return $current_category;
    	}
 
+    /*
+     * @deprecated use helper/Catalog.php
+     */
     public function getProductUrl(Mage_Catalog_Model_Product $_product = null){
-        if(!$_product) return '';
-
-        // force display deepest child category as request path
-        $categories = $_product->getCategoryCollection();
-        $deepCatId = 0;
-        $path = '';
-        $product_path = false;
-        foreach ($categories as $category) {
-            $id = $category->getId();
-            if(in_array($id, array('15','146'))){
-                // skip home(15) and special(146) categories
-                continue;
-            }
-            // look for the deepest path and save
-            if(substr_count($category->getData('path'), '/') > substr_count($path, '/')){
-                $path = $category->getData('path');
-                $deepCatId = $id;
-            }
-        }
-        // load category
-        $category = Mage::getModel('catalog/category')->load($deepCatId);
-
-        // remove .html from category url_path
-        $category_path = str_replace('.html', '',  $category->getData('url_path'));
-
-        // get product url path if set
-        $product_url_path = $_product->getData('url_path');
-
-        // get product request path if set
-        $product_request_path = $_product->getData('request_path');
-
-        // now grab only the product path including suffix (if any)
-        if($product_url_path){
-            $product_path = array_pop(explode('/', $product_url_path));
-        } elseif($product_request_path){
-            $product_path = array_pop(explode('/', $product_request_path));
-        }
-
-        // now set product request path to be our full product url including deepest category url path
-        if($product_path){
-            $_product->setData('request_path', $category_path . '/' . $product_path);
-        }
-        // END: force display deepest child category as request path
-
-        return $_product->getProductUrl();
+        return Mage::helper('tgeneral/catalog')->getProductUrl($_product);
     }
 
     public function getPriceLabel(){

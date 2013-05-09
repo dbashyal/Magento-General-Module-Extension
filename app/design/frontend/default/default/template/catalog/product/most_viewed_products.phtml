@@ -1,0 +1,48 @@
+<?php
+$_thelper = Mage::helper('tgeneral');
+$_tcatalog = Mage::helper('tgeneral/catalog');
+$brand_id = 0;
+
+// find the id of current brand
+$category=$_tcatalog->getCurrentCategory();
+if($category){
+    $attributeId = Mage::getResourceModel('eav/entity_attribute')->getIdByCode('catalog_product','brand');
+    $attribute = Mage::getModel('catalog/resource_eav_attribute')->load($attributeId);
+    $attributeOptions = $attribute ->getSource()->getAllOptions();
+    foreach($attributeOptions as $code){
+        if($code['label']==$category->getName()){
+            $brand_id=$code['value'];
+        }
+    }
+}
+
+if($brand_id){
+    $_tcatalog->addAttributeToFilter('brand', $brand_id);
+}
+
+$products = $_tcatalog->getPopularProducts();
+?>
+<?php if ($products): ?>
+<div class="product_compare_type0">
+	<div class="shop_brand">Most Popular</div>
+	<div>
+		<div class="block-content">
+			<ol id="recently-viewed-items">
+			<?php foreach ($products as $_item): ?>
+			<?php $_item = Mage::getModel('catalog/product')->load($_item->getId()) ?>
+				<li class="item" style="text-align:center;margin: 5px 0 10px 0;width: 214px;display: block;">
+					<a href="<?php echo $_tcatalog->getProductUrl($_item) ?>" style="display:block;margin:0 auto;border:1px solid #dedede;padding: 0 0 15px 0;">
+                        <img style="" src="<?php echo $this->helper('catalog/image')->init($_item, 'image')->resize(120) ?>"/>
+                        <br/>
+                        <?php echo $this->helper('catalog/output')->productAttribute($_item, $_item->getName() , 'name') ?>
+                    </a>
+                    <p class="fclear"></p>
+				</li>
+			<?php endforeach; ?>
+			</ol>
+			<script type="text/javascript">decorateList('recently-viewed-items');</script>
+		</div>
+	</div>
+</div>
+<?php endif; ?>
+<div class="gap2"></div>

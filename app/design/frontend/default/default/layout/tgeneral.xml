@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<reference name="left">
+		<block type="page/html"  template="catalog/product/most_viewed_products.phtml"/>
+	</reference>
+	<reference name="right">
+		<block type="page/html"  template="catalog/product/most_viewed_products.phtml"/>
+	</reference>
+</layout>
