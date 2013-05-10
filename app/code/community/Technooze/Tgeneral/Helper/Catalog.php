@@ -336,9 +336,11 @@ class Technooze_Tgeneral_Helper_Catalog extends Mage_Core_Helper_Abstract
 
         // now grab only the product path including suffix (if any)
         if($product_url_path){
-            $product_path = array_pop(explode('/', $product_url_path));
+            $path = explode('/', $product_url_path);
+            $product_path = array_pop($path);
         } elseif($product_request_path){
-            $product_path = array_pop(explode('/', $product_request_path));
+            $path = explode('/', $product_request_path);
+            $product_path = array_pop($path);
         }
 
         // now set product request path to be our full product url including deepest category url path
