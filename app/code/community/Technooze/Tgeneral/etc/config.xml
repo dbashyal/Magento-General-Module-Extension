@@ -31,6 +31,12 @@
                     <product_viewed>Technooze_Tgeneral_Block_Reports_Product_Viewed</product_viewed>
                 </rewrite>
             </reports>
+            <catalog>
+                <rewrite>
+                    <!-- rewrite Reports\Block\Product\Viewed.php -->
+                    <product_list_toolbar>Technooze_Tgeneral_Block_Catalog_Product_List_Toolbar</product_list_toolbar>
+                </rewrite>
+            </catalog>
         </blocks>
         <helpers>
             <tgeneral>
