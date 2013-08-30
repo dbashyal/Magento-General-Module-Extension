@@ -82,4 +82,4 @@ Mage::helper('tgeneral')->mediaCdnUrl($this->helper('catalog/image')->init($_pro
 on system config in media url i have set (http://media.example.com/) then media is replaced with media0-media10)
 
 
-###visit: http://learntipsandtricks.com/ for more magento tips, tricks and codes.
+###visit: http://dltr.org/ for more magento tips, tricks and codes.
