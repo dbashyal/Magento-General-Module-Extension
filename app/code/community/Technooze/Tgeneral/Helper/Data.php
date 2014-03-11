@@ -71,6 +71,11 @@ class Technooze_Tgeneral_Helper_Data extends Mage_Core_Helper_Abstract
         return Mage::getStoreConfig('general/store_information/address');
    	}
 
+    public function getCompareListUrl()
+   	{
+        return Mage::helper('catalog/product_compare')->getListUrl();
+   	}
+
     public function getCurrentCategory()
    	{
         $current_category = Mage::registry('current_category');
