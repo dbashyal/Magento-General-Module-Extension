@@ -351,4 +351,15 @@ class Technooze_Tgeneral_Helper_Catalog extends Mage_Core_Helper_Abstract
 
         return $_product->getProductUrl();
     }
+
+    public function getCanonicalUrl()
+   	{
+        if($product = Mage::registry('current_product')){
+            $url = $product->getData('url_path');
+            if($url){
+                return rtrim(Mage::getUrl($url), '/');
+            }
+        }
+   	    return Mage::helper('core/url')->getCurrentUrl();
+   	}
 }
