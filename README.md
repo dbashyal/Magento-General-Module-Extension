@@ -81,5 +81,21 @@ Mage::helper('tgeneral')->mediaCdnUrl($this->helper('catalog/image')->init($_pro
 ```
 on system config in media url i have set (http://media.example.com/) then media is replaced with media0-media10)
 
+## Magento 301 redirect disabled products pages to associated category pages
+```xml
+    <frontend>
+        <events>
+            <controller_action_predispatch>
+                <observers>
+                    <technooze_tgeneral_model_redirect>
+                        <type>singleton</type>
+                        <class>tgeneral/redirect</class>
+                        <method>redirectToParentUsingObserver</method>
+                    </technooze_tgeneral_model_redirect>
+                </observers>
+            </controller_action_predispatch>
+        </events>
+    </frontend>
+```
 
 ###visit: http://dltr.org/ for more magento tips, tricks and codes.
