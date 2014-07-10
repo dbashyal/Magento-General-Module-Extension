@@ -98,4 +98,15 @@ on system config in media url i have set (http://media.example.com/) then media 
     </frontend>
 ```
 
+## Add welcome text on top links.
+```xml
+<reference name="top.links">
+    <block type="tgeneral/welcome" name="tgeneral_welcome_link">
+        <action method="addWelcomeLink"></action>
+    </block>
+    <action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
+    <action method="addLink" translate="label title" module="customer"><label>My Account</label><url helper="customer/getAccountUrl"/><title>My Account</title><prepare/><urlParams/><position>20</position></action>
+</reference>
+```
+
 ###visit: http://dltr.org/ for more magento tips, tricks and codes.

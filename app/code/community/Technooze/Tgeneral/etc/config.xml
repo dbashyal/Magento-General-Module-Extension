@@ -16,7 +16,7 @@
     <global>
         <blocks>
             <tgeneral>
-                <class>Technooze_Tgeneral_Blocks</class>
+                <class>Technooze_Tgeneral_Block</class>
             </tgeneral>
             <page>
                 <rewrite>
