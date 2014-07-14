@@ -48,6 +48,14 @@
                 <class>Technooze_Tgeneral_Model</class>
             </tgeneral>
         </models>
+        <cms>
+            <page>
+                <tempate_filter>tgeneral/template_filter</tempate_filter>
+            </page>
+            <block>
+                <tempate_filter>tgeneral/template_filter</tempate_filter>
+            </block>
+        </cms>
     </global>
     <frontend>
 		<layout>
