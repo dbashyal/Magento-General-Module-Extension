@@ -1,5 +1,5 @@
 <?php
-class Technooze_Tgeneral_Model_Template_Filter extends Mage_Cms_Model_Template_Filter
+class Technooze_Tgeneral_Model_Template_Filter extends Mage_Widget_Model_Template_Filter
 {
     /**
      * Generate tgeneral
