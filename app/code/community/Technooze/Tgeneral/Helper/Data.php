@@ -28,9 +28,36 @@ class Technooze_Tgeneral_Helper_Data extends Mage_Core_Helper_Abstract
     private $_mediaGalleryBackendModel;
     protected $_mediaCount = 0;
     private $_tcdn = 0;
+    private $_store;
 
     public function __construct(){
         $this->_tcdn = Mage::getStoreConfig('general/tgeneral/tcdn');
+    }
+
+    public function getAlternateStoreUrl(){
+        $store = $this->getStoreData()->getData('code');
+        /* @var $model Mage_Catalog_Model_Convert_Adapter_Product */
+        $model = Mage::getSingleton('catalog/convert_adapter_product');
+        $params['_store_to_url'] = false;
+        $params['_nosid'] = true;
+        switch($store){
+            case 'bookclub':
+                return Mage::getModel('core/url')->setStore($model->getStoreByCode('default'))->getUrl('', $params);
+                break;
+            default:
+                return Mage::getModel('core/url')->setStore($model->getStoreByCode('bookclub'))->getUrl('', $params);
+        }
+    }
+
+    public function getStoreData(){
+        /*
+         Book Club      (code: bookclub)
+         Schools Site   (code: default)
+         */
+        if(null == $this->_store){
+            $this->_store = Mage::app()->getStore();
+        }
+        return $this->_store;
     }
 
     public function mediaCdnUrl($src = false)
