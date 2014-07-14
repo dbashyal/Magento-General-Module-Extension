@@ -111,4 +111,12 @@ on system config in media url i have set (http://media.example.com/) then media 
 </reference>
 ```
 
+## Now you can add new custom template tag to call your helper
+New CMS directive included in this module will help you to call helper functions within your cms pages and static blocks.
+```php
+{{tgeneral helper="getAlternateStoreUrl"}}
+// or
+{{tgeneral helper="yourHelperWithinTgeneralModule/getAlternateStoreUrl"}}
+```
+
 ###visit: http://dltr.org/ for more magento tips, tricks and codes.
