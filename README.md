@@ -119,4 +119,14 @@ New CMS directive included in this module will help you to call helper functions
 {{tgeneral helper="yourHelperWithinTgeneralModule/getAlternateStoreUrl"}}
 ```
 
+## How to Add new body class in magento
+// app/design/frontend/dltrorg/default/layout/local.xml
+```xml
+<default>
+	<reference name="root">
+		<action method="addBodyClass"><classname helper="tgeneral/getNewBodyClass"/></action>
+	</reference>
+</default>
+```
+
 ###visit: http://dltr.org/ for more magento tips, tricks and codes.
