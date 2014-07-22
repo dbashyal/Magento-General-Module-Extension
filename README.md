@@ -119,4 +119,15 @@ New CMS directive included in this module will help you to call helper functions
 {{tgeneral helper="yourHelperWithinTgeneralModule/getAlternateStoreUrl"}}
 ```
 
+##remove account link by name
+```xml
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="removeLink"><name>rewardpoints</name></action>
+        </reference>
+    </customer_account>
+```
+
+
 ###visit: http://dltr.org/ for more magento tips, tricks and codes.
+

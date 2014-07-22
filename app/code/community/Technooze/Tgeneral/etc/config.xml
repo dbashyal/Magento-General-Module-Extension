@@ -18,6 +18,11 @@
             <tgeneral>
                 <class>Technooze_Tgeneral_Block</class>
             </tgeneral>
+            <customer>
+                <rewrite>
+                    <account_navigation>Technooze_Tgeneral_Block_Customer_Account_Navigation</account_navigation>
+                </rewrite>
+            </customer>
             <page>
                 <rewrite>
                     <!-- rewrite Page\Block\Html\Head.php -->
