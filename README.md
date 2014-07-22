@@ -128,6 +128,5 @@ New CMS directive included in this module will help you to call helper functions
     </customer_account>
 ```
 
-
 ###visit: http://dltr.org/ for more magento tips, tricks and codes.
 
