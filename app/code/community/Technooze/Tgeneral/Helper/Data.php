@@ -290,4 +290,10 @@ class Technooze_Tgeneral_Helper_Data extends Mage_Core_Helper_Abstract
         catch (Exception $e) {
         }
     }
+
+    public function getNewBodyClass(){
+        $code = Mage::app()->getStore()->getData('code');
+
+        return 'tgeneral-' . $code;
+    }
 }
