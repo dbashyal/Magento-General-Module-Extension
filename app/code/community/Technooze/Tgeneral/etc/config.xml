@@ -26,7 +26,8 @@
             <page>
                 <rewrite>
                     <!-- rewrite Page\Block\Html\Head.php -->
-                    <html_head>Technooze_Tgeneral_Block_Html_Head</html_head>
+                    <html_head>Technooze_Tgeneral_Block_Page_Html_Head</html_head>
+					<html>Technooze_Tgeneral_Block_Page_Html</html>
                 </rewrite>
             </page>
             <reports>

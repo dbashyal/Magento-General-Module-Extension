@@ -22,7 +22,7 @@
  * @module   Tgeneral
  * @author   Damodar Bashyal (enjoygame @ hotmail.com)
  */
-class Technooze_Tgeneral_Block_Html_Head extends Mage_Page_Block_Html_Head
+class Technooze_Tgeneral_Block_Page_Html_Head extends Mage_Page_Block_Html_Head
 {
     public function __construct()
     {
