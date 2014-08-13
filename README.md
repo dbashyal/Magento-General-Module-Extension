@@ -127,6 +127,20 @@ New CMS directive included in this module will help you to call helper functions
         </reference>
     </customer_account>
 ```
+## remove body class to change position
+```xml
+    <customer_account_createadmin>
+        <update handle="customer_account_create"/>
+        <reference name="root">
+			<!-- first add original class of customer create -->
+            <action method="addBodyClass"><classname>customer-account-create</classname></action>
+			<!-- remove createadmin class which is added by default before previous one -->
+            <action method="removeBodyClass"><classname>customer-account-createadmin</classname></action>
+			<!-- now add it back, so it's added at the end -->
+            <action method="addBodyClass"><classname>customer-account-createadmin</classname></action>
+        </reference>
+    </customer_account_createadmin>
+```
 
 ###visit: http://dltr.org/ for more magento tips, tricks and codes.
 
