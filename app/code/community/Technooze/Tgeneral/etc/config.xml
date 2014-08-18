@@ -21,6 +21,7 @@
             <customer>
                 <rewrite>
                     <account_navigation>Technooze_Tgeneral_Block_Customer_Account_Navigation</account_navigation>
+					<form_register>Technooze_Tgeneral_Block_Customer_Form_Register</form_register>
                 </rewrite>
             </customer>
             <page>
@@ -48,6 +49,11 @@
             <tgeneral>
                 <class>Technooze_Tgeneral_Helper</class>
             </tgeneral>
+            <customer>
+                <rewrite>
+                    <data>Technooze_Tgeneral_Helper_Customer</data>
+                </rewrite>
+            </customer>
         </helpers>
         <models>
             <tgeneral>
